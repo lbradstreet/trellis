@@ -38,8 +38,8 @@
 ; to do the setup and tear down
 (defrecord Handler [handler]
   component/Lifecycle
-  (start [component])
-  (stop [component]))
+  (start [component] component)
+  (stop [component] component))
 
 (defn new-handler [handler]
   (map->Handler {:handler handler}))
